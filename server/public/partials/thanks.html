@@ -1,15 +1,15 @@
 <div>
-  <h1> Gracias, ganaste 30 puntos mas! </h1>
+  <h1> Gracias, ganaste {{status.user.points}} puntos mas! </h1>
 
   <h3> Tu Marca es</h3>
   <ul>
-    <li>Reciclado     <strong>33.33</strong></li>
-    <li>Reduccion     <strong>33.33</strong></li>
-    <li>Reutilizacion <strong>33.33</strong></li>
+    <li>Reciclado     <strong>{{status.user.greenmark.recycle}}</strong></li>
+    <li>Reduccion     <strong>{{status.user.greenmark.reduce}}</strong></li>
+    <li>Reutilizacion <strong>{{status.user.greenmark.reutilize}}</strong></li>
   </ul>
 
 
-  <h3> Villa Crespo esta #20 en la ciudad! </h3>
+  <h3> {{status.community.shortName}} esta #{{status.community.position}} en la ciudad! </h3>
   <p> Faltan mas botellas, estas separando?
 
   <h3> Ayudanos, pone un tacho piola en tu barrio o en la oficina </h3>

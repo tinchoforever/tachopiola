@@ -5,7 +5,8 @@ angular.module('tachoApp.controllers')
 
   trashService.subscribe(function(e,d){
     $scope.$apply(function(){
-           $location.path('/loader');
+          trashService.clearCallbacks();
+          $location.path('/loader');
     });
   });
 

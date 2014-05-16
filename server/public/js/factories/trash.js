@@ -3,7 +3,8 @@ angular.module('tachoApp.factories')
   console.log('trashService');
   var factory = {};
 
-  factory.callback = function(){};
+
+
 
 
   var socket = new io.connect("http://localhost:3000");
@@ -14,5 +15,15 @@ angular.module('tachoApp.factories')
   factory.subscribe = function(callback){
     factory.callback = callback;
   };
+  factory.onId = function(callback){
+    factory.idCallback = callback;
+  };
+  factory.clearCallbacks = function(){
+    factory.callback = function(){};
+    factory.idCallback = function(){};
+  };
+
+  factory.clearCallbacks();
+
   return factory;
 });
