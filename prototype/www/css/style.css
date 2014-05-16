@@ -9,7 +9,6 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 } 
 
 /*  HEADER  */
-
 .main-container {
     width: 800px;
     height: 640px;
@@ -41,6 +40,73 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 }
 
 
+.module {
+    height: 500px;
+}
+
+
+
+/*   INIT MODULE   */
+.init-module {
+    position: relative;
+}
+
+.init-module:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.init-module .arrow-init {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -43px;
+    -webkit-animation: arrow 1s infinite ease-in;
+       -moz-animation: arrow 1s infinite ease-in;
+            animation: arrow 1s infinite ease-in;
+}
+
+@-webkit-keyframes arrow {
+  0% {right: 10px;}
+  50% {right: 20px;}
+  100% {right: 10px;}
+}
+
+.init-module .copy-container {
+    position: absolute;
+    top: 150px;
+    left: 120px;
+}
+
+.init-module .copy-container .init-copy {
+    color: black;
+    font-size: 100px;
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 0;
+}
+
+.init-module .copy-container .init-subcopy {
+    color: black;
+    font-size: 35px;
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 0;
+    margin-top: -20px;
+}
+
+
+
+
+/*  DATA VIZ  */
+.data-viz-module {
+    position: relative;
+}
+
+.data-viz-module
 
 
 
