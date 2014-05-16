@@ -215,6 +215,38 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     display: block;
 }
 
+.summary .tip-title {
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 60px;
+    line-height: 50px;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.summary .tip-subtitle {
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 60px;
+    line-height: 50px;
+    margin-bottom: 0;
+    margin-top: 0px;
+}
+
+.summary .actions > span {
+    width: 100%;
+    display: block;
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
 .summary .actions .button {
     padding-top: 22px;
 }
@@ -222,6 +254,25 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 .summary .actions .button span {
     display: inline;
     margin-left: 5px;
+}
+
+.summary .title-bar {
+    margin-top: 0;
+}
+
+.summary .box.counter {
+    width: 100%;
+    height: 100px;
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 50px;
+}
+
+.summary .box.counter span {
+    color: #03bba3;
+    font-size: 50px;
 }
 
 
