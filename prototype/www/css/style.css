@@ -1,0 +1,239 @@
+/*
+We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
+However, this blank file is available if you prefer
+*/
+
+body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
+    padding: 0;
+    margin: 0;
+} 
+
+/*  HEADER  */
+.main-container {
+    width: 800px;
+    height: 640px;
+    background: #cede67;
+    margin: 0 auto;
+    position: relative;
+}
+
+.module-header {
+    background-color: #ffd300;
+    width: 100%;
+    height: 85px;
+    border-bottom: 3px solid black;
+}
+
+.module-header h1 {
+    font-size: 35px;
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    float: left;
+    text-indent: 30px;
+    padding-top: 20px;
+}
+
+.module-header h2 {
+    float: right;
+    font-size: 0;
+}
+
+
+.module {
+    height: 500px;
+}
+
+
+
+/*   INIT MODULE   */
+.init-module {
+    position: relative;
+}
+
+.init-module:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.init-module .arrow-init {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -43px;
+    -webkit-animation: arrow 1s infinite ease-in;
+       -moz-animation: arrow 1s infinite ease-in;
+            animation: arrow 1s infinite ease-in;
+}
+
+@-webkit-keyframes arrow {
+  0% {right: 10px;}
+  50% {right: 20px;}
+  100% {right: 10px;}
+}
+
+.init-module .copy-container {
+    position: absolute;
+    top: 150px;
+    left: 120px;
+}
+
+.init-module .copy-container .init-copy {
+    color: black;
+    font-size: 100px;
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 0;
+}
+
+.init-module .copy-container .init-subcopy {
+    color: black;
+    font-size: 35px;
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    padding: 0;
+    margin-top: -20px;
+}
+
+
+
+
+/*  DATA VIZ  */
+.data-viz-module {
+    position: relative;
+}
+
+.data-module {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.data-module:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.box {
+    border-radius: 10px;
+    background: white;
+    width: 240px;
+    height: 200px;
+    float: left;
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial;
+    font-weight: bold;
+    color: black;
+    padding: 20px 0;
+}
+
+.box p {
+    font-family: Arial;
+    font-weight: bold;
+    color: black;
+}
+
+.box span {
+    font-size: 15px;
+}
+
+.box .number-items {
+    color: #03bba3;
+    font-size: 110px;
+    line-height: 100px;
+}
+
+.box .type-items {
+    font-size: 25px;
+}
+
+.points {
+    width: 420px;
+    float: right;
+}
+
+.points {
+    color: #03bba3;
+    font-size: 110px;
+    line-height: 100px;
+    letter-spacing: -0.05em;
+    padding-top: 50px;
+}
+.points span {
+    letter-spacing: 0;
+    color: black;
+    font-size: 35px;
+    font-family: Arial;
+}
+
+.title-bar {
+    width: 100%;
+    height: 60px;
+    color: white;
+    font-size: 25px;
+    font-family: Arial;
+    font-weight: bold;
+    background: #85c653;
+    margin-top: 30px;
+    line-height: 60px;
+    text-indent: 60px;
+}
+
+.actions {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.button {
+    background: #0647a8;
+    border-radius: 6px;
+    width: 48%;
+    height: 75px;
+    float: left;
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding-top: 13px;
+}
+
+.button.comuna {
+    float: right;
+}
+
+.button span {
+    font-size: 18px;
+    clear: both;
+    display: block;
+}
+
+.summary .actions .button {
+    padding-top: 22px;
+}
+
+.summary .actions .button span {
+    display: inline;
+    margin-left: 5px;
+}
+
+
+
+/*  FOOTER  */
+.bot-img {
+    background: url('../img/app/bg-bottom.jpg') no-repeat;
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 800px;
+    height: 98px;
+}
+
+
