@@ -95,7 +95,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     font-family: Arial;
     font-weight: bold;
     padding: 0;
-    margin-top: -20px;
+    margin-top: 10px;
 }
 
 
@@ -132,6 +132,10 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     padding: 20px 0;
 }
 
+.summary.final .box.idle {
+    height: 70px;
+}
+
 .box p {
     font-family: Arial;
     font-weight: bold;
@@ -160,14 +164,15 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 .points {
     color: #03bba3;
     font-size: 110px;
-    line-height: 100px;
+    line-height: 220px;
     letter-spacing: -0.05em;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 .points span {
     letter-spacing: 0;
     color: black;
     font-size: 35px;
+    margin-left: 20px;
     font-family: Arial;
 }
 
@@ -179,7 +184,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     font-family: Arial;
     font-weight: bold;
     background: #85c653;
-    margin-top: 30px;
+    margin-top: 20px;
     line-height: 60px;
     text-indent: 60px;
 }
@@ -187,14 +192,14 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 .actions {
     width: 70%;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .button {
     background: #0647a8;
     border-radius: 6px;
     width: 48%;
-    height: 75px;
+    height: 60px;
     float: left;
     color: white;
     font-family: Arial;
@@ -327,6 +332,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     margin-right: 10px;
     text-align: center;
     font-size: 18px;
+    line-height: 30px;
 }
 
 
