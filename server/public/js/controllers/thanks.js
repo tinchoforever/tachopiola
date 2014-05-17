@@ -44,17 +44,20 @@ angular.module('tachoApp.controllers')
     r1: pointsFactory.currentState.user.greenmark.recycle,
     r2: pointsFactory.currentState.user.greenmark.reduce,
     r3: pointsFactory.currentState.user.greenmark.reutilize,
+    color: "red",
 
   };
   var cityMark = {
     r1: 12,
     r2: 14,
     r3: 10,
+    color: "blue",
   };
   var comunityMark = {
     r1: pointsFactory.currentState.community.greenmark.recycle,
     r2: pointsFactory.currentState.community.greenmark.reduce,
     r3: pointsFactory.currentState.community.greenmark.reutilize,
+    color:"yellow",
   };
 
   window.initMark(svg1,personalMark);

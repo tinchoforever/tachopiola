@@ -6,6 +6,7 @@ serialPort.on("open", function() {
     console.log('Arudino online!');
     serialPort.on('data', function(data) {
 
+        console.log(data);
         var isBottleOn =  parseInt(data);
         if (isBottleOn) {
           console.log('Yes! > A Bottle is inside the container :-)');

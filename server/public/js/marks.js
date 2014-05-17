@@ -91,7 +91,7 @@ window.initMark = function(svg, mark){
       .transition()
         .ease("elastic")
         .attrTween("d", arcTween)
-        .style("fill", function(d) { return color(d.value); });
+        .style("fill", function(d){ console.log(d); return d.color ;} /*function(d) { return color(d.value); } */);
 
     field.select("text")
         .attr("x",-10)
@@ -126,9 +126,9 @@ window.initMark = function(svg, mark){
 
     var now = new Date;
     return [
-      {index: .1, text: recycleHandler.value, value: recycleHandler.getProgress()},
-      {index: .2, text: reutilizeHandler.value, value: reutilizeHandler.getProgress()},
-      {index: .3, text: reduceHandler.value, value: reduceHandler.getProgress()},
+      {index: .1, text: recycleHandler.value, value: recycleHandler.getProgress(), color:"blue",},
+      {index: .2, text: reutilizeHandler.value, value: reutilizeHandler.getProgress(), color:"yellow"},
+      {index: .3, text: reduceHandler.value, value: reduceHandler.getProgress(), color:"red"},
     ];
   }
 
