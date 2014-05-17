@@ -58,7 +58,7 @@ angular.module('tachoApp.controllers')
 
   window.initMark(svg1,personalMark);
   window.initMark(svg2,comunityMark);
-  window.initMark(svg3,cityMark);
+  // window.initMark(svg3,cityMark);
 
 
 });
