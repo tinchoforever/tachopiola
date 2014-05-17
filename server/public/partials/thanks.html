@@ -1,30 +1,29 @@
 <section class="module data-viz-module summary">
     <div class="data-module">
-      <div class="box counter thanks">Llevas <span>15</span> dias separando reciclables!</div>
+      <div class="box counter thanks">{{status.user.name}}, llevas <span>15</span> dias. Te faltan <span>5</span> para generar el habito </div>
     </div>
 
     <div class="tu-marca-cont">
-      <h3> Tu Marca es</h3>
+      <h3>Tu marca es</h3>
 
       <div class="mark-resume">{{status.user.greenmark.points}}</div>
 
       <div class="marca-user mark1"></div>
 
       <div class="referencia">
-        <p><!-- <strong class="reciclado">{{status.user.greenmark.recycle}}</strong> --><span class="circle recycle"></span> <span>Reciclado</span></p>
+        <p><span class="circle recycle"></span> <span>Reciclado</span></p>
         <p><span class="circle reutilize"></span><span>Reutilizacion</span></p>
         <p><span class="circle reduce"></span> <span>Reduccion</span></p>
 
-        <!-- <li class="gracias-puntos"><p class="gracias-title">Gracias!</p> ganaste <div>{{status.user.points}}</div> puntos mas!</li> -->
       </div>
     </div>
 
     <div class="marca-comuna">
-        <h3>Marca Verde comuna</h3>
+        <h3>{{status.community.shortName}}</h3>
 
         <div class="mark-resume">{{status.community.greenmark.points}}</div>
 
-        <div class="location"><p class="highlight-name">{{status.community.shortName}}</p> esta <p class="highlight-name">#{{status.community.position}}</p> en la ciudad! </div>
+        <div class="location"><p class="highlight-name">Esta comuna</p> esta <p class="highlight-name">#{{status.community.position}}</p> en la ciudad! </div>
         <div class="marca-comuna"></div>
     </div>
   </section>

@@ -60,7 +60,7 @@ if (process.env.NODE_ENV ==='production'){
 var mainSocket = {};
 io.sockets.on('connection', function(socket) {
   mainSocket = socket;
-  mainSocket.emit("new-bottle", {});
+  // mainSocket.emit("new-bottle", {});
 });
 
 //mainSocket.emit("new-bottle", {});

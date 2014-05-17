@@ -3,7 +3,7 @@ angular.module('tachoApp.controllers')
     function($scope, $location, $timeout, pointsFactory, trashService) {
 
 
-    $scope.counter = 5;
+    $scope.counter = 15;
     $scope.points = 15;
     $scope.bottles = 1;
 
