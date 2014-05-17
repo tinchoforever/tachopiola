@@ -87,12 +87,11 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 
 .init-module .arrow-init {
     position: absolute;
-    right: 10px;
-    top: 50%;
+    right: 350px;
+    top: 75%;
+    -webkit-transform: rotate(90deg);
     margin-top: -43px;
-    -webkit-animation: arrow 1s infinite ease-in;
-       -moz-animation: arrow 1s infinite ease-in;
-            animation: arrow 1s infinite ease-in;
+    
 }
 
 @-webkit-keyframes arrow {
@@ -103,7 +102,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 
 .init-module .copy-container {
     position: absolute;
-    top: 150px;
+    top: 40px;
     left: 120px;
 }
 
