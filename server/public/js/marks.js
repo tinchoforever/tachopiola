@@ -94,6 +94,7 @@ window.initMark = function(svg, mark){
         .style("fill", function(d) { return color(d.value); });
 
     field.select("text")
+        .attr("x",-10)
         .attr("dy", function(d) { return d.value < .5 ? "-.5em" : "1em"; })
         .text(function(d) { return d.text; })
       .transition()

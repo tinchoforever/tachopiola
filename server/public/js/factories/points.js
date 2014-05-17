@@ -29,8 +29,8 @@ angular.module('tachoApp.factories')
       position: 22,
       greenmark : {
         recycle : 10,
-        reutilize: 50,
-        reduce : 30
+        reutilize: 20,
+        reduce : 40
       }
     },
     city:{

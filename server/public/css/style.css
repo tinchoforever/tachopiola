@@ -292,7 +292,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 
 .summary .box.counter span {
     color: #03bba3;
-    font-size: 70px;
+    font-size: 50px;
 }
 
 .cta {
@@ -338,7 +338,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 
 .tu-marca-cont {
     float: left;
-    width: 55%;
+    width: 40%;
     padding-left: 60px;
 }
 
@@ -427,21 +427,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 
 .marca-comuna {
     float: right;
-    width: 35%;
-    padding: 20px;
-    position: relative;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-.marca-comuna .gral-cont {
-    border-radius: 10px;
-    background: #b1c33c;
-    z-index: 50;
-    width: 100%;
-    height: 340px;
-    padding: 10px;
+    width: 50%;
     position: relative;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -451,27 +437,27 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 
 .marca-comuna svg {
     z-index: 100;
-    top: 80px;
-    left: -20px;
+    top: 45px;
+    left: -55px;
     position: absolute;
 }
 
-.marca-comuna .gral-cont h3 {
+.marca-comuna h3 {
     color: black;
     font-family: Arial;
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-.marca-comuna .gral-cont .location {
+.marca-comuna .location {
     font-family: Arial;
     font-size: 14px;
     color: black; 
     font-weight: bold;
 }
 
-.marca-comuna .gral-cont .location .highlight-name {
+.marca-comuna .location .highlight-name {
    color: #135ac5;
     display: inline;
 }
@@ -484,10 +470,16 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 }
 
 .summary .box.counter.thanks {
-    height: 60px;
+    height: 40px;
     margin-bottom: 30px;
+    line-height: 30px;
 }
 
+svg text {
+    font-family: Arial;
+    font-size  : 34;
+    fill       : #FFF;
+}
 
 
 
