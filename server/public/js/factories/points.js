@@ -9,6 +9,7 @@ angular.module('tachoApp.factories')
         to : " buso polar",
         count: 0.5,
       },
+      name: "Lourdes",
       lastMark : 30,
       points : 30,
       journey:{
@@ -42,22 +43,29 @@ angular.module('tachoApp.factories')
     }
 
   };
-  factory.donate = function(points,callback,onError){
+  // factory.donate = function(points,callback,onError){
 
-    callback();
-    //todo: update with system data.
-    // $http.post('/api/v1/cities',city)
-    //   .success(callback)
-    //   .error(onError);
-  };
+  //   callback();
+  //   //todo: update with system data.
+  //   $http.post('/api/v1/cities',city)
+  //     .success(callback)
+  //     .error(onError);
+  // };
 
   factory.count = function(userId, points,callback,onError){
 
-    callback();
-    //todo: update with system data.
-    // $http.post('/api/v1/cities',city)
-    //   .success(callback)
-    //   .error(onError);
+    var insight = {id: userId, bottles: points};
+    $http.post('/api/v1/users/push',insight)
+      .success(function(data){
+        console.log(data);
+
+        factory.currentState.user.name = data.name;
+        factory.currentState.user.greenmark.reutilize = Math.round(data.user.reutilize);
+        factory.currentState.user.greenmark.recycle = Math.round(data.user.recycle);
+        factory.currentState.user.greenmark.reduce = Math.round(data.user.reduce);
+
+        callback(data);
+      }).error(onError);
   };
 
   return factory;

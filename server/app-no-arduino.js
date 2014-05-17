@@ -41,6 +41,7 @@ app.post('/api/v1/users/push', greenUsersAPI.push);
 app.get('/api/v1/users/all', greenUsersAPI.all);
 
 
+
 var server = http.createServer(app);
 server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
@@ -59,30 +60,7 @@ if (process.env.NODE_ENV ==='production'){
 var mainSocket = {};
 io.sockets.on('connection', function(socket) {
   mainSocket = socket;
-
-  socket.on('movie-item', function(msg) {
-       console.log("movie-item", msg);
-       socket.broadcast.emit("new-item", msg);
-  });
+  mainSocket.emit("new-bottle", {});
 });
 
-
-var SerialPort = require("serialport").SerialPort
-var serialPort = new SerialPort("/dev/cu.usbmodemfa141", {
-    baudrate: 9600
-});
-serialPort.on("open", function() {
-    console.log('Arudino online!');
-    serialPort.on('data', function(data) {
-
-        var isBottleOn =  parseInt(data);
-        if (isBottleOn) {
-          console.log('Yes! > A Bottle is inside the container :-)');
-          mainSocket.emit("new-bottle", {});
-        }
-        else{
-          console.log('No bottle in the container :-(')
-        }
-
-    });
-});
+//mainSocket.emit("new-bottle", {});
