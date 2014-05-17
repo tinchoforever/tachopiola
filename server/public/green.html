@@ -14,34 +14,78 @@ text {
   text-anchor: middle;
 }
 
-#credit {
-  position: absolute;
-  right: 4px;
-  bottom: 4px;
-  color: #ddd;
-}
-
-#credit a {
-  color: #fff;
-  font-weight: bold;
-}
 
 </style>
-<div id="credit">Inspired by <a href="http://blog.pixelbreaker.com/polarclock/">pixelbreaker</a>.</div>
+<div></div>
 <script src="js/libraries/d3.v3.js"></script>
 <script>
 
-var width = 960,
-    height = 800,
-    radius = Math.min(width, height) / 1.9,
+window.recycleHandler = {
+    value: 95,
+    moment: Date.now ,
+    progress : 0,
+    times: 0,
+    executed:false,
+    start: Date.now(),
+    init : function(){
+
+    },
+    getProgress : function(){
+
+      if (this.progress < 100){
+        this.progress = this.progress + this.value/100;
+      }
+      return (this.progress / 100);
+    }
+};
+window.reutilizeHandler = {
+    value: 11,
+    moment: Date.now ,
+    progress : 0,
+    times: 0,
+    executed:false,
+    start: Date.now(),
+    init : function(){
+
+    },
+    getProgress : function(){
+
+      if (this.progress < 100){
+        this.progress = this.progress + this.value/100;
+      }
+      return (this.progress / 100);
+    }
+};
+window.reduceHandler = {
+    value: 22,
+    moment: Date.now ,
+    progress : 0,
+    times: 0,
+    executed:false,
+    start: Date.now(),
+    init : function(){
+
+    },
+    getProgress : function(){
+
+      if (this.progress < 100){
+        this.progress = this.progress + this.value/100;
+      }
+      return (this.progress / 100);
+    }
+};
+
+window.executed =0;
+
+var width = 300,
+    height = 300,
+    radius = Math.min(width, height),
     spacing = .09;
 
 var formatSecond = d3.time.format("%S s"),
     formatMinute = d3.time.format("%M m"),
-    formatHour = d3.time.format("%H h"),
-    formatDay = d3.time.format("%a"),
-    formatDate = d3.time.format("%d d"),
-    formatMonth = d3.time.format("%b");
+    formatHour = d3.time.format("%H h");
+
 
 var color = d3.scale.linear()
     .range(["hsl(-180,50%,50%)", "hsl(180,50%,50%)"])
@@ -64,14 +108,11 @@ var field = svg.selectAll("g")
   .enter().append("g");
 
 field.append("path");
-
 field.append("text");
-
 d3.transition().duration(0).each(tick);
-
 d3.select(self.frameElement).style("height", height + "px");
-
 function tick() {
+
   field = field
       .each(function(d) { this._value = d.value; })
       .data(fields)
@@ -94,7 +135,13 @@ function tick() {
             + "rotate(" + (d.value < .5 ? -90 : 90) + ")"
       });
 
-  setTimeout(tick, 1000 - Date.now() % 1000);
+    if (executed < 100){
+      //console.log(executed);
+      setTimeout(tick, 200 - Date.now() % 1000);
+      executed++;
+    }
+    //executed = true;
+
 }
 
 function arcTween(d) {
@@ -102,12 +149,16 @@ function arcTween(d) {
   return function(t) { d.value = i(t); return arc(d); };
 }
 
+
+
 function fields() {
+
+
   var now = new Date;
   return [
-    {index: .7, text: formatSecond(now), value: now.getSeconds() / 60},
-    {index: .6, text: formatMinute(now), value: now.getMinutes() / 60},
-    {index: .5, text: formatHour(now),   value: now.getHours() / 24}
+    {index: .1, text: recycleHandler.value, value: recycleHandler.getProgress()},
+    {index: .2, text: reutilizeHandler.value, value: reutilizeHandler.getProgress()},
+    {index: .3, text: reduceHandler.value, value: reduceHandler.getProgress()},
   ];
 }
 
