@@ -16,206 +16,60 @@ text {
 
 
 </style>
-<div class="mark1"></div>
-<div class="mark2"></div>
-<div class="mark3"></div>
+<div class="marca-user"></div>
+<div class="marca-ciudad"></div>
+<div class="marca-comuna"></div>
 <script src="js/libraries/d3.v3.js"></script>
+<script src="js/marks.js"></script>
 <script>
-
-
-
-
-
-var width = 300,
+    var width = 300,
     height = 300,
     radius = Math.min(width, height),
     spacing = .09;
 
-var formatSecond = d3.time.format("%S s"),
-    formatMinute = d3.time.format("%M m"),
-    formatHour = d3.time.format("%H h");
 
 
-var color = d3.scale.linear()
-    .range(["hsl(-180,50%,50%)", "hsl(180,50%,50%)"])
-    .interpolate(interpolateHsl);
+  var svg1 = d3.select(".marca-user").append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-var arc = d3.svg.arc()
-    .startAngle(0)
-    .endAngle(function(d) { return d.value * 2 * Math.PI; })
-    .innerRadius(function(d) { return d.index * radius; })
-    .outerRadius(function(d) { return (d.index + spacing) * radius; });
-
-
-var svg1 = d3.select(".mark1").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-var svg2= d3.select(".mark2").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+  var svg2= d3.select(".marca-comuna").append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 
-var svg3 = d3.select(".mark3").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+  var svg3 = d3.select(".marca-ciudad").append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 
-var personalMark = {
-  r1: 33,
-  r2: 22,
-  r3: 11,
-};
-var cityMark = {
-  r1: 12,
-  r2: 14,
-  r3: 10,
-};
-var comunityMark = {
-  r1: 11,
-  r2: 10,
-  r3: 2,
-};
-init(svg1,personalMark);
-init(svg2,comunityMark);
-init(svg3,cityMark);
-
-
-function init(svg, mark){
-    var executed = 0;
-    var recycleHandler = {
-      value: mark.r1,
-      moment: Date.now ,
-      progress : 0,
-      times: 0,
-      executed:false,
-      start: Date.now(),
-      init : function(){
-
-      },
-      getProgress : function(){
-
-        if (this.progress < 100){
-          this.progress = this.progress + this.value/100;
-        }
-        return (this.progress / 100);
-      }
+  var personalMark = {
+    r1: 33,
+    r2: 22,
+    r3: 11,
   };
-  var reutilizeHandler = {
-      value: mark.r2,
-      moment: Date.now ,
-      progress : 0,
-      times: 0,
-      executed:false,
-      start: Date.now(),
-      init : function(){
-
-      },
-      getProgress : function(){
-
-        if (this.progress < 100){
-          this.progress = this.progress + this.value/100;
-        }
-        return (this.progress / 100);
-      }
+  var cityMark = {
+    r1: 12,
+    r2: 14,
+    r3: 10,
   };
-  var reduceHandler = {
-      value: mark.r3,
-      moment: Date.now ,
-      progress : 0,
-      times: 0,
-      executed:false,
-      start: Date.now(),
-      init : function(){
-
-      },
-      getProgress : function(){
-
-        if (this.progress < 100){
-          this.progress = this.progress + this.value/100;
-        }
-        return (this.progress / 100);
-      }
+  var comunityMark = {
+    r1: 11,
+    r2: 10,
+    r3: 2,
   };
 
-
-  var field = svg.selectAll("g")
-      .data(fields)
-    .enter().append("g");
-
-  field.append("path");
-  field.append("text");
-  d3.transition().duration(0).each(tick);
-  d3.select(self.frameElement).style("height", height + "px");
-  function tick() {
-
-    field = field
-        .each(function(d) { this._value = d.value; })
-        .data(fields)
-        .each(function(d) { d.previousValue = this._value; });
-
-    field.select("path")
-      .transition()
-        .ease("elastic")
-        .attrTween("d", arcTween)
-        .style("fill", function(d) { return color(d.value); });
-
-    field.select("text")
-        .attr("dy", function(d) { return d.value < .5 ? "-.5em" : "1em"; })
-        .text(function(d) { return d.text; })
-      .transition()
-        .ease("elastic")
-        .attr("transform", function(d) {
-          return "rotate(" + 360 * d.value + ")"
-              + "translate(0," + -(d.index + spacing / 2) * radius + ")"
-              + "rotate(" + (d.value < .5 ? -90 : 90) + ")"
-        });
-
-      if (executed < 100){
-        //console.log(executed);
-        setTimeout(tick, 100 - Date.now() % 1000);
-        executed++;
-      }
-      //executed = true;
-
-  }
-
-  function arcTween(d) {
-    var i = d3.interpolateNumber(d.previousValue, d.value);
-    return function(t) { d.value = i(t); return arc(d); };
-  }
+  initMark(svg1,personalMark);
+  initMark(svg2,comunityMark);
+  initMark(svg3,cityMark);
 
 
-
-  function fields() {
-
-
-    var now = new Date;
-    return [
-      {index: .1, text: recycleHandler.value, value: recycleHandler.getProgress()},
-      {index: .2, text: reutilizeHandler.value, value: reutilizeHandler.getProgress()},
-      {index: .3, text: reduceHandler.value, value: reduceHandler.getProgress()},
-    ];
-  }
-
-
-
-
-}
-
- // Avoid shortest-path interpolation.
-  function interpolateHsl(a, b) {
-    var i = d3.interpolateString(a, b);
-    return function(t) {
-      return d3.hsl(i(t));
-    };
-  }
 
 
 </script>
