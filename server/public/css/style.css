@@ -132,7 +132,8 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     padding: 20px 0;
 }
 
-.summary.final .box.idle {
+.summary.final .box.idle,
+.summary.final .box.thanks {
     height: 70px;
 }
 
@@ -334,6 +335,47 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     font-size: 18px;
     line-height: 30px;
 }
+
+.tu-marca-cont {
+    float: left;
+    width: 60%;
+    padding-left: 60px;
+}
+
+.tu-marca-cont h3 {
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.marca-user {
+    height: 200px;
+    width: 250px;
+    background: green;
+    margin: 10px 0;
+    float: left;
+}
+
+.tu-marca-cont ul {
+    margin-left: 15px;
+    float: left;
+}
+
+.tu-marca-cont ul li {
+    list-style: none;
+}
+
+.marca-general {
+    float: right;
+    width: 30%;
+}
+
+.summary .box.counter.thanks {
+    height: 60px;
+    margin-bottom: 40px;
+}
+
 
 
 
