@@ -19,7 +19,7 @@ angular.module('tachoApp.factories')
       },
       position: 33,
       greenmark : {
-        recycle : 50,
+        recycle : 95,
         reutilize: 30,
         reduce : 70
       }
@@ -29,8 +29,8 @@ angular.module('tachoApp.factories')
       shortName: "Villa Crespo",
       position: 22,
       greenmark : {
-        recycle : 10,
-        reutilize: 20,
+        recycle : 60,
+        reutilize: 80,
         reduce : 40
       }
     },
