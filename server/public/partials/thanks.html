@@ -1,18 +1,22 @@
-<div>
-  <h1> Gracias, ganaste {{status.user.points}} puntos mas! </h1>
+<section class="module data-viz-module summary">
+    <div class="data-module">
 
-  <h3> Tu Marca es</h3>
-  <ul>
-    <li>Reciclado     <strong>{{status.user.greenmark.recycle}}</strong></li>
-    <li>Reduccion     <strong>{{status.user.greenmark.reduce}}</strong></li>
-    <li>Reutilizacion <strong>{{status.user.greenmark.reutilize}}</strong></li>
-  </ul>
+      <div class="box counter">Llevas <span>15</span> dias separando reciclables!</div>
+    </div>
 
 
-  <h3> {{status.community.shortName}} esta #{{status.community.position}} en la ciudad! </h3>
-  <p> Faltan mas botellas, estas separando?
+    <h3> Tu Marca es</h3>
+    <ul>
+      <li>Reciclado     <strong>{{status.user.greenmark.recycle}}</strong></li>
+      <li>Reduccion     <strong>{{status.user.greenmark.reduce}}</strong></li>
+      <li>Reutilizacion <strong>{{status.user.greenmark.reutilize}}</strong></li>
+      <li>Gracias, ganaste {{status.user.points}} puntos mas!</li>
+    </ul>
 
-  <h3> Ayudanos, pone un tacho piola en tu barrio o en la oficina </h3>
-  <p> Twitea #QUIEROUNTACHOPIOLA </p>
 
-</div>
+    <div class="actions">
+      <span>Marca Verde comuna</span>
+      <div class="button">{{status.community.shortName}} esta #{{status.community.position}} en la ciudad! </div>
+      <div class="button comuna">1200<span>caba</span></div>
+    </div>
+  </section>

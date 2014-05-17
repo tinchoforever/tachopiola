@@ -9,10 +9,10 @@ angular.module('tachoApp', [
     function($routeProvider){
       $routeProvider
       .when('/',{
-         templateUrl:'partials/main.html',
+         templateUrl:'partials/hola.html',
          controller: 'MainController'
       }).when('/idle',{
-         templateUrl:'partials/Idle.html',
+         templateUrl:'partials/idle.html',
          controller: 'IdleController'
       }).when('/loader',{
          templateUrl:'partials/loader.html',

@@ -1,14 +1,27 @@
-<div ng-hide="loading">
-  <h1> {{counter}} segundos... </h1>
-  <h1> <span> {{bottles}} </span> <storng> Botella Pet .. </storng> </h1>
-  <p> Ganaste {{points}} Puntos... </p>
+<!-- DATA VIZ -->
+<section ng-hide="loading" class="module data-viz-module">
+  <div class="data-module">
+    <div class="box number">
+      <h3> {{counter}} segundos... </h3>
+      <span>Ingresaste</span>
+      <div class="number-items">{{bottles}} </div>
+      <p class="type-items">Botellas PET</p>
+    </div>
 
-  <h2> Apoya tu ID para guardar los puntos</h2>
-  <h3> Sino.... lo vamos a donar la escuela mas cercana </h3>
+    <div class="box points">{{points}}  <span>puntos</span></div>
+  </div>
 
-</div>
-<div ng-show="loading">
+  <div class="title-bar">¿Que queres hacer?</div>
+
+  <div class="actions">
+    <div class="button">cargalo<span>en tu tarjeta</span></div>
+    <div class="button comuna">suma puntos<span>en tu comuna</span></div>
+  </div>
+</section>
+<section ng-show="loading">
+<div>
   <h3> {{pre}} </h3>
   <h3> {{copy}}  </h3>
   <h4> Un segundin....</h4>
 </div>
+</section>

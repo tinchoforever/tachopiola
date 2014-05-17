@@ -6,12 +6,20 @@
   <title>Tacho Piola - Subte B Angel Gallardo </title>
   <script src="js/libraries/angular.min.js"></script>
   <script src="js/libraries/angular-route.min.js"></script>
-  <link rel="stylesheet" href="css/gumby.css">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
   <body>
-    <h1> Tacho Piola </h1>
-  <div ng-view>
+    <div class="main-container">
+
+    <header class="module-header">
+      <h1>#TACHOPIOLA</h1>
+      <h2>
+        <img src="img/app/logo-gcba.jpg" />
+      </h2>
+    </header>
+    <div ng-view></div>
+    <footer class="bot-img"></footer>
   </div>
 </body>
   <script src="socket.io/socket.io.js"></script>
