@@ -1,22 +1,25 @@
 <section class="module data-viz-module summary">
     <div class="data-module">
-
-      <div class="box counter">Llevas <span>15</span> dias separando reciclables!</div>
+      <div class="box counter thanks">Llevas <span>15</span> dias separando reciclables!</div>
     </div>
 
+    <div class="tu-marca-cont">
+      <h3> Tu Marca es</h3>
 
-    <h3> Tu Marca es</h3>
-    <ul>
-      <li>Reciclado     <strong>{{status.user.greenmark.recycle}}</strong></li>
-      <li>Reduccion     <strong>{{status.user.greenmark.reduce}}</strong></li>
-      <li>Reutilizacion <strong>{{status.user.greenmark.reutilize}}</strong></li>
-      <li>Gracias, ganaste {{status.user.points}} puntos mas!</li>
-    </ul>
+      <div class="marca-user"></div>
 
+      <ul>
+        <li><strong class="reciclado">{{status.user.greenmark.recycle}}</strong> <span>Reciclado</span></li>
+        <li><strong class="reduccion">{{status.user.greenmark.reduce}}</strong> <span>Reduccion</span></li>
+        <li><strong class="reutilizacion">{{status.user.greenmark.reutilize}}</strong> <span>Reutilizacion</span></li>
 
-    <div class="actions">
+        <li class="gracias-puntos"><p class="gracias-title">Gracias!</p> ganaste <div>{{status.user.points}}</div> puntos mas!</li>
+      </ul>
+    </div>
+
+    <div class="marca-general">
       <span>Marca Verde comuna</span>
-      <div class="button">{{status.community.shortName}} esta #{{status.community.position}} en la ciudad! </div>
-      <div class="button comuna">1200<span>caba</span></div>
+      <div>{{status.community.shortName}} esta #{{status.community.position}} en la ciudad! </div>
+      <div>1200<span>caba</span></div>
     </div>
   </section>
