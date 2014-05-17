@@ -340,6 +340,51 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     float: left;
     width: 40%;
     padding-left: 60px;
+    position: relative;
+}
+
+.referencia {
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    width: 230px;
+}
+
+.referencia p {
+    color: black;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.referencia .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #979934;
+    float: left; 
+    display: block;
+    margin-right: 10px;
+}
+
+.referencia .circle.reutilize {
+    background: #24c4da;
+}
+
+.referencia .circle.reduce {
+    background: #f95645;
+}
+
+.mark-resume {
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 22px;
+    position: absolute;
+    top: 182px;
+    left: 121px;
 }
 
 .tu-marca-cont h3 {
@@ -427,7 +472,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 
 .marca-comuna {
     float: right;
-    width: 50%;
+    width: 40%;
     position: relative;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -438,7 +483,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 .marca-comuna svg {
     z-index: 100;
     top: 45px;
-    left: -55px;
+    left: -15px;
     position: absolute;
 }
 

@@ -126,9 +126,9 @@ window.initMark = function(svg, mark){
 
     var now = new Date;
     return [
-      {index: .1, text: recycleHandler.value, value: recycleHandler.getProgress(), color:"blue",},
-      {index: .2, text: reutilizeHandler.value, value: reutilizeHandler.getProgress(), color:"yellow"},
-      {index: .3, text: reduceHandler.value, value: reduceHandler.getProgress(), color:"red"},
+      {index: .1, text: recycleHandler.value, value: recycleHandler.getProgress(), color:"#979934",},
+      {index: .2, text: reutilizeHandler.value, value: reutilizeHandler.getProgress(), color:"#24c4da"},
+      {index: .3, text: reduceHandler.value, value: reduceHandler.getProgress(), color:"#f95645"},
     ];
   }
 
