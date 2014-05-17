@@ -58,10 +58,33 @@ if (process.env.NODE_ENV ==='production'){
   });
 }
 
+var mainSocket = {};
 io.sockets.on('connection', function(socket) {
-  socket.broadcast.emit("new-bottle", {});
-  // socket.on('movie-item', function(msg) {
-  //     console.log("movie-item", msg);
-  //     socket.broadcast.emit("new-item", msg);
-  // });
+  mainSocket = socket;
+
+  socket.on('movie-item', function(msg) {
+       console.log("movie-item", msg);
+       socket.broadcast.emit("new-item", msg);
+  });
+});
+
+
+var SerialPort = require("serialport").SerialPort
+var serialPort = new SerialPort("/dev/cu.usbmodemfa141", {
+    baudrate: 9600
+});
+serialPort.on("open", function() {
+    console.log('Arudino online!');
+    serialPort.on('data', function(data) {
+
+        var isBottleOn =  parseInt(data);
+        if (isBottleOn) {
+          console.log('Yes! > A Bottle is inside the container :-)');
+          mainSocket.emit("new-bottle", {});
+        }
+        else{
+          console.log('No bottle in the container :-(')
+        }
+
+    });
 });
