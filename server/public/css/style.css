@@ -455,6 +455,18 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     font-weight: bold;
 }
 
+.marca-general .gral-cont .location .highlight-name {
+   color: #135ac5;
+    display: inline;
+}
+
+.grafico-ciudad {
+    width: 150px;
+    height: 150px;
+    background: green;
+    margin: 10px 0;
+}
+
 .summary .box.counter.thanks {
     height: 60px;
     margin-bottom: 30px;
