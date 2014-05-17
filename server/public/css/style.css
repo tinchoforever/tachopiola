@@ -350,7 +350,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 }
 
 .marca-user {
-    height: 200px;
+    height: 250px;
     width: 250px;
     background: green;
     margin: 10px 0;
@@ -358,12 +358,65 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 }
 
 .tu-marca-cont ul {
-    margin-left: 15px;
+    margin: 10px 0 0 15px;
     float: left;
 }
 
 .tu-marca-cont ul li {
     list-style: none;
+    width: 100%;
+    height: 60px;
+    display: block;
+    clear: both;
+}
+
+.tu-marca-cont ul li strong {
+    background: #8f9d36;
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: white;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 25px;
+    border-radius: 50%;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+}
+
+.tu-marca-cont ul li strong.reduccion {
+    background: #24c5d9;
+}
+
+.tu-marca-cont ul li strong.reutilizacion {
+    background: #f75741;
+}
+
+.tu-marca-cont ul li span {
+    float: left;
+    line-height: 50px;
+    margin-left: 15px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 18px;
+    color: black;
+}
+
+.gracias-puntos {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.gracias-puntos > div {
+    font-size: 20px;
+    color: #03bba3;
+    display: inline;
+}
+
+.gracias-title {
+    font-size: 20px;
 }
 
 .marca-general {
@@ -373,7 +426,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 
 .summary .box.counter.thanks {
     height: 60px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 

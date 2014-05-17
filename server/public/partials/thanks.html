@@ -9,11 +9,11 @@
       <div class="marca-user"></div>
 
       <ul>
-        <li>Reciclado     <strong>{{status.user.greenmark.recycle}}</strong></li>
-        <li>Reduccion     <strong>{{status.user.greenmark.reduce}}</strong></li>
-        <li>Reutilizacion <strong>{{status.user.greenmark.reutilize}}</strong></li>
+        <li><strong class="reciclado">{{status.user.greenmark.recycle}}</strong> <span>Reciclado</span></li>
+        <li><strong class="reduccion">{{status.user.greenmark.reduce}}</strong> <span>Reduccion</span></li>
+        <li><strong class="reutilizacion">{{status.user.greenmark.reutilize}}</strong> <span>Reutilizacion</span></li>
 
-        <li>Gracias, ganaste {{status.user.points}} puntos mas!</li>
+        <li class="gracias-puntos"><p class="gracias-title">Gracias!</p> ganaste <div>{{status.user.points}}</div> puntos mas!</li>
       </ul>
     </div>
 
