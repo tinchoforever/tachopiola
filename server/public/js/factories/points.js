@@ -21,7 +21,8 @@ angular.module('tachoApp.factories')
       greenmark : {
         recycle : 95,
         reutilize: 30,
-        reduce : 70
+        reduce : 70,
+        points: 30
       }
     },
     community:{
@@ -31,14 +32,16 @@ angular.module('tachoApp.factories')
       greenmark : {
         recycle : 60,
         reutilize: 80,
-        reduce : 40
+        reduce : 40,
+        points: 30
       }
     },
     city:{
       greenmark : {
         recycle : 33,
         reutilize: 33,
-        reduce : 33
+        reduce : 33,
+        points: 22,
       }
     }
 
@@ -63,6 +66,9 @@ angular.module('tachoApp.factories')
         factory.currentState.user.greenmark.reutilize = Math.round(data.user.reutilize);
         factory.currentState.user.greenmark.recycle = Math.round(data.user.recycle);
         factory.currentState.user.greenmark.reduce = Math.round(data.user.reduce);
+        factory.currentState.user.greenmark.points =
+          Math.round(data.user.reutilize + data.user.recycle + data.user.reduce);
+
 
         callback(data);
       }).error(onError);

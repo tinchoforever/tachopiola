@@ -6,7 +6,7 @@
     <div class="tu-marca-cont">
       <h3> Tu Marca es</h3>
 
-      <div class="mark-resume">100</div>
+      <div class="mark-resume">{{status.user.greenmark.points}}</div>
 
       <div class="marca-user mark1"></div>
 
@@ -16,14 +16,14 @@
         <p><span class="circle reduce"></span> <span>Reduccion</span></p>
 
         <!-- <li class="gracias-puntos"><p class="gracias-title">Gracias!</p> ganaste <div>{{status.user.points}}</div> puntos mas!</li> -->
-      </div> 
+      </div>
     </div>
 
     <div class="marca-comuna">
         <h3>Marca Verde comuna</h3>
 
-        <div class="mark-resume">100</div>
-        
+        <div class="mark-resume">{{status.community.greenmark.points}}</div>
+
         <div class="location"><p class="highlight-name">{{status.community.shortName}}</p> esta <p class="highlight-name">#{{status.community.position}}</p> en la ciudad! </div>
         <div class="marca-comuna"></div>
     </div>
