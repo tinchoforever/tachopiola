@@ -338,7 +338,7 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 
 .tu-marca-cont {
     float: left;
-    width: 60%;
+    width: 55%;
     padding-left: 60px;
 }
 
@@ -417,11 +417,42 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 
 .gracias-title {
     font-size: 20px;
+    margin-top: 10px;
 }
 
 .marca-general {
     float: right;
-    width: 30%;
+    width: 35%;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.marca-general .gral-cont {
+    border-radius: 10px;
+    background: #b1c33c;
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.marca-general .gral-cont h3 {
+    color: black;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.marca-general .gral-cont .location {
+    font-family: Arial;
+    font-size: 14px;
+    color: black; 
+    font-weight: bold;
 }
 
 .summary .box.counter.thanks {
