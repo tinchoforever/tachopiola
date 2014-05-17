@@ -351,10 +351,15 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
 
 .marca-user {
     height: 250px;
-    width: 250px;
-    background: green;
+    width: 200px;
+    position: relative;
     margin: 10px 0;
     float: left;
+}
+
+.marca-user svg {
+    position: absolute;
+    left: -70px;
 }
 
 .tu-marca-cont ul {
@@ -385,13 +390,13 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     line-height: 50px;
 }
 
-.tu-marca-cont ul li strong.reduccion {
+/*.tu-marca-cont ul li strong.reduccion {
     background: #24c5d9;
 }
 
 .tu-marca-cont ul li strong.reutilizacion {
     background: #f75741;
-}
+}*/
 
 .tu-marca-cont ul li span {
     float: left;
@@ -420,27 +425,38 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     margin-top: 10px;
 }
 
-.marca-general {
+.marca-comuna {
     float: right;
     width: 35%;
     padding: 20px;
+    position: relative;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
 
-.marca-general .gral-cont {
+.marca-comuna .gral-cont {
     border-radius: 10px;
     background: #b1c33c;
+    z-index: 50;
     width: 100%;
-    height: 250px;
+    height: 340px;
     padding: 10px;
+    position: relative;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
 }
 
-.marca-general .gral-cont h3 {
+
+.marca-comuna svg {
+    z-index: 100;
+    top: 80px;
+    left: -20px;
+    position: absolute;
+}
+
+.marca-comuna .gral-cont h3 {
     color: black;
     font-family: Arial;
     font-weight: bold;
@@ -448,14 +464,14 @@ body,h1,h2,h3,h4,h5,h6,ul,li,p,table,img {
     margin-bottom: 10px;
 }
 
-.marca-general .gral-cont .location {
+.marca-comuna .gral-cont .location {
     font-family: Arial;
     font-size: 14px;
     color: black; 
     font-weight: bold;
 }
 
-.marca-general .gral-cont .location .highlight-name {
+.marca-comuna .gral-cont .location .highlight-name {
    color: #135ac5;
     display: inline;
 }
