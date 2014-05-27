@@ -3,7 +3,7 @@ angular.module('tachoApp.controllers')
     function($scope, $location, $timeout, pointsFactory, trashService) {
 
 
-    $scope.counter = 5;
+    $scope.counter = 15;
     $scope.points = 15;
     $scope.bottles = 1;
 
@@ -14,7 +14,7 @@ angular.module('tachoApp.controllers')
         $scope.loading = true;
         //Donate Points and go to thanks.
         $scope.copy = "Guardando  " + $scope.points + " puntos a la escuela mas cercana.";
-        pointsFactory.donate($scope.bottles, function(){
+        pointsFactory.count("19991999", $scope.bottles, function(){
           trashService.clearCallbacks();
           $location.path('/thanks');
         });
@@ -42,7 +42,7 @@ angular.module('tachoApp.controllers')
           $scope.pre = "Hola " + user.name ;
           $scope.copy = "Guardando " + $scope.points + " puntos en tu cuenta.";
 
-          pointsFactory.count(user.id, $scope.bottles, function(){
+          pointsFactory.count("19991999", $scope.bottles, function(){
             trashService.clearCallbacks();
             $location.path('/thanks');
           });

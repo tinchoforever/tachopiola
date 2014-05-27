@@ -9,6 +9,7 @@ angular.module('tachoApp.factories')
         to : " buso polar",
         count: 0.5,
       },
+      name: "Lourdes",
       lastMark : 30,
       points : 30,
       journey:{
@@ -18,9 +19,10 @@ angular.module('tachoApp.factories')
       },
       position: 33,
       greenmark : {
-        recycle : 33,
-        reutilize: 33,
-        reduce : 33
+        recycle : 95,
+        reutilize: 30,
+        reduce : 70,
+        points: 30
       }
     },
     community:{
@@ -28,36 +30,48 @@ angular.module('tachoApp.factories')
       shortName: "Villa Crespo",
       position: 22,
       greenmark : {
-        recycle : 33,
-        reutilize: 33,
-        reduce : 33
+        recycle : 60,
+        reutilize: 80,
+        reduce : 40,
+        points: 30
       }
     },
     city:{
       greenmark : {
         recycle : 33,
         reutilize: 33,
-        reduce : 33
+        reduce : 33,
+        points: 22,
       }
     }
 
   };
-  factory.donate = function(points,callback,onError){
+  // factory.donate = function(points,callback,onError){
 
-    callback();
-    //todo: update with system data.
-    // $http.post('/api/v1/cities',city)
-    //   .success(callback)
-    //   .error(onError);
-  };
+  //   callback();
+  //   //todo: update with system data.
+  //   $http.post('/api/v1/cities',city)
+  //     .success(callback)
+  //     .error(onError);
+  // };
 
   factory.count = function(userId, points,callback,onError){
 
-    callback();
-    //todo: update with system data.
-    // $http.post('/api/v1/cities',city)
-    //   .success(callback)
-    //   .error(onError);
+    var insight = {id: userId, bottles: points};
+    $http.post('/api/v1/users/push',insight)
+      .success(function(data){
+        console.log(data);
+
+        factory.currentState.user.name = data.name;
+        factory.currentState.user.greenmark.reutilize = Math.round(data.user.reutilize);
+        factory.currentState.user.greenmark.recycle = Math.round(data.user.recycle);
+        factory.currentState.user.greenmark.reduce = Math.round(data.user.reduce);
+        factory.currentState.user.greenmark.points =
+          Math.round(data.user.reutilize + data.user.recycle + data.user.reduce);
+
+
+        callback(data);
+      }).error(onError);
   };
 
   return factory;

@@ -5,7 +5,7 @@
 
 var express = require('express');
 var routes = require('./routes');
-var citiesAPI = require('./routes/cities');
+var greenUsersAPI = require('./routes/greenUsers');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
@@ -36,11 +36,9 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-app.post('/api/v1/cities', citiesAPI.add);
-app.delete('/api/v1/cities/:id', citiesAPI.remove);
-app.get('/api/v1/cities/all', citiesAPI.all);
-
-
+app.post('/api/v1/users', greenUsersAPI.add);
+app.post('/api/v1/users/push', greenUsersAPI.push);
+app.get('/api/v1/users/all', greenUsersAPI.all);
 
 
 var server = http.createServer(app);
@@ -58,10 +56,33 @@ if (process.env.NODE_ENV ==='production'){
   });
 }
 
+var mainSocket = {};
 io.sockets.on('connection', function(socket) {
-  socket.broadcast.emit("new-bottle", {});
-  // socket.on('movie-item', function(msg) {
-  //     console.log("movie-item", msg);
-  //     socket.broadcast.emit("new-item", msg);
-  // });
+  mainSocket = socket;
+
+  socket.on('movie-item', function(msg) {
+       console.log("movie-item", msg);
+       socket.broadcast.emit("new-item", msg);
+  });
+});
+
+
+var SerialPort = require("serialport").SerialPort
+var serialPort = new SerialPort("/dev/cu.usbmodemfa141", {
+    baudrate: 9600
+});
+serialPort.on("open", function() {
+    console.log('Arudino online!');
+    serialPort.on('data', function(data) {
+
+        var isBottleOn =  parseInt(data);
+        if (isBottleOn) {
+          console.log('Yes! > A Bottle is inside the container :-)');
+          mainSocket.emit("new-bottle", {});
+        }
+        else{
+          console.log('No bottle in the container :-(')
+        }
+
+    });
 });
